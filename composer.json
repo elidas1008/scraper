@@ -1,0 +1,16 @@
+{
+    "name": "elidas1008/scraper",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Elidas1008\\Scraper\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eli Das",
+            "email": "elidas1008@gmail.com"
+        }
+    ],
+    "require": {}
+}
