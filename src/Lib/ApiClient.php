@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Elidas1008\Experiments\Lib;
 
+use Elidas1008\Experiments\Lib\Entity\Serializable;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Throwable;
 

@@ -2,6 +2,8 @@
 
 namespace Elidas1008\Experiments\Lib;
 
+use Elidas1008\Experiments\Lib\Entity\Serializable;
+
 abstract class AbstractSerializer
 {
     /**
@@ -11,5 +13,5 @@ abstract class AbstractSerializer
     {
     }
 
-    abstract public function deserialize(string $encoded, string $entity): Serializable;
+    abstract public function deserialize(string $encoded, string $entityName): Serializable;
 }
