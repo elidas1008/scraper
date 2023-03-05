@@ -5,6 +5,7 @@ namespace Elidas1008\Experiments\Lib;
 use Elidas1008\Experiments\Lib\Entity\FieldName;
 use Elidas1008\Experiments\Lib\Entity\Serializable;
 use ReflectionClass;
+use ReflectionType;
 use RuntimeException;
 
 abstract class AbstractSerializer
@@ -27,16 +28,20 @@ abstract class AbstractSerializer
         return new $entityName();
     }
 
-    protected function hydrate(array $data, Serializable $entity)
+    protected function hydrate(array $data, Serializable $entity): void
     {
-        $r = new ReflectionClass($entity);
-        foreach ($r->getProperties() as $property) {
+        $reflection = new ReflectionClass($entity);
+        foreach ($reflection->getProperties() as $property) {
             $arguments = $property->getAttributes(FieldName::class)[0]?->getArguments() ?? null;
-
             $dataKey = $arguments['fieldName'] ?? $property->getName();
             $entityKey = $property->getName();
 
-            $entity->$entityKey = $data[$dataKey] ?? '';
+            $entity->$entityKey = $this->getValue($data, $dataKey, $property->getType());
         }
+    }
+
+    private function getValue(array $data, string $dataKey, ReflectionType $type): mixed
+    {
+            return $data[$dataKey] ?? '';
     }
 }
