@@ -17,5 +17,6 @@ class ZipCode extends Entity
     /**
      * @var Location[]
      */
+    #[EntityTranslation(arrayEntityName: Location::class)]
     public array $places;
 }

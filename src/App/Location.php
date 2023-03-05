@@ -9,6 +9,7 @@ use Elidas1008\Experiments\Lib\Entity\EntityTranslation;
 
 class Location extends Entity
 {
+    #[EntityTranslation(fieldName: 'place name')]
     public string $placeName;
     public string $longitude;
     public string $state;
