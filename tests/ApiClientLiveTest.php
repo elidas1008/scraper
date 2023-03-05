@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Elidas1008\Experiments\Tests;
 
-use Elidas1008\Experiments\ApiClient;
-use Elidas1008\Experiments\JsonSerializer;
+use Elidas1008\Experiments\App\ZipCode;
+use Elidas1008\Experiments\Lib\ApiClient;
+use Elidas1008\Experiments\Lib\JsonSerializer;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\CurlHttpClient;
 use Throwable;
@@ -24,7 +25,7 @@ class ApiClientLiveTest extends TestCase
      */
     public function test(): void
     {
-        $response = $this->client->fetch('http://api.zippopotam.us/be/9000');
+        $response = $this->client->fetch('http://api.zippopotam.us/be/9000', ZipCode::class);
 
         $expected = [
             "post code" => "9000", "country" => "Belgium", "country abbreviation" => "BE", "places" => [
