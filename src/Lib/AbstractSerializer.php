@@ -11,5 +11,5 @@ abstract class AbstractSerializer
     {
     }
 
-    abstract public function deserialize(string $encoded, string $entity): object;
+    abstract public function deserialize(string $encoded, string $entity): Serializable;
 }

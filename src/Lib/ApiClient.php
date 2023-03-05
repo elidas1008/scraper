@@ -16,7 +16,7 @@ class ApiClient
     /**
      * @throws Throwable
      */
-    public function fetch(string $url, string $entity, array $options = []): object
+    public function get(string $url, string $entity, array $options = []): Serializable
     {
         $response = $this->client->request('GET', $url, $options);
         return $this->serializer->deserialize($response->getContent(), $entity);

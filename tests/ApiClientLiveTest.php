@@ -25,7 +25,7 @@ class ApiClientLiveTest extends TestCase
      */
     public function test(): void
     {
-        $response = $this->client->fetch('http://api.zippopotam.us/be/9000', ZipCode::class);
+        $response = $this->client->get('http://api.zippopotam.us/be/9000', ZipCode::class);
 
         $expected = [
             "post code" => "9000", "country" => "Belgium", "country abbreviation" => "BE", "places" => [
