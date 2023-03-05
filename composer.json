@@ -3,7 +3,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Elidas1008\\Scraper\\": "src/"
+            "Elidas1008\\Experiments\\": "src/"
         }
     },
     "authors": [
