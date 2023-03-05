@@ -9,16 +9,16 @@ use Throwable;
 
 class ApiClient
 {
-    public function __construct(private HttpClientInterface $client)
+    public function __construct(private HttpClientInterface $client, private SerializerInterface $serializer)
     {
     }
 
     /**
      * @throws Throwable
      */
-    public function fetch(string $url, array $options = []): string
+    public function fetch(string $url, array $options = []): array
     {
         $response = $this->client->request('GET', $url, $options);
-        return $response->getContent();
+        return $this->serializer->deserialize($response->getContent());
     }
 }
