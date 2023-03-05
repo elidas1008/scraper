@@ -4,21 +4,12 @@ declare(strict_types=1);
 
 namespace Elidas1008\Experiments\Tests;
 
-use Attribute;
 use Elidas1008\Experiments\App\ZipCode;
 use Elidas1008\Experiments\Lib\ApiClient;
-use Elidas1008\Experiments\Lib\Entity\FieldName;
 use Elidas1008\Experiments\Lib\JsonSerializer;
 use PHPUnit\Framework\TestCase;
-use ReflectionClass;
 use Symfony\Component\HttpClient\CurlHttpClient;
 use Throwable;
-
-class Test
-{
-    #[FieldName]
-    public string $testje;
-}
 
 class ApiClientLiveTest extends TestCase
 {
