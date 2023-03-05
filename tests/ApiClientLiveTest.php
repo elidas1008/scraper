@@ -6,6 +6,7 @@ namespace Elidas1008\Experiments\Tests;
 
 use Elidas1008\Experiments\App\ZipCode;
 use Elidas1008\Experiments\Lib\ApiClient;
+use Elidas1008\Experiments\Lib\Entity\Entity;
 use Elidas1008\Experiments\Lib\JsonSerializer;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\CurlHttpClient;
@@ -37,8 +38,9 @@ class ApiClientLiveTest extends TestCase
         $this->compareZipCode($expected, $response);
     }
 
-    private function compareZipCode(ZipCode $expected, ZipCode $actual)
+    private function compareZipCode(ZipCode $expected, Entity $actual)
     {
+        static::assertInstanceOf(ZipCode::class, $actual);
         static::assertSame($expected->postCode, $actual->postCode);
         static::assertSame($expected->country, $actual->country);
         static::assertSame($expected->countryAbbreviation, $actual->countryAbbreviation);

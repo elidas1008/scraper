@@ -4,15 +4,18 @@ declare(strict_types=1);
 
 namespace Elidas1008\Experiments\App;
 
-use Elidas1008\Experiments\Lib\Entity\FieldName;
-use Elidas1008\Experiments\Lib\Entity\Serializable;
+use Elidas1008\Experiments\Lib\Entity\EntityTranslation;
+use Elidas1008\Experiments\Lib\Entity\Entity;
 
-class ZipCode extends Serializable
+class ZipCode extends Entity
 {
-    #[FieldName(fieldName: 'post code')]
+    #[EntityTranslation(fieldName: 'post code')]
     public string $postCode;
     public string $country;
-    #[FieldName(fieldName: 'country abbreviation')]
+    #[EntityTranslation(fieldName: 'country abbreviation')]
     public string $countryAbbreviation;
-//    public array $places;
+    /**
+     * @var Location[]
+     */
+    public array $places;
 }

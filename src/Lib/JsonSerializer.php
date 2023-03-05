@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Elidas1008\Experiments\Lib;
 
-use Elidas1008\Experiments\Lib\Entity\Serializable;
+use Elidas1008\Experiments\Lib\Entity\Entity;
 use Throwable;
 
 class JsonSerializer extends AbstractSerializer
@@ -12,7 +12,7 @@ class JsonSerializer extends AbstractSerializer
     /**
      * @throws Throwable
      */
-    public function deserialize(string $encoded, string $entityName): Serializable
+    public function deserialize(string $encoded, string $entityName): Entity
     {
         $entity = $this->createEntity($entityName);
 

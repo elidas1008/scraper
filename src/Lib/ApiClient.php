@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Elidas1008\Experiments\Lib;
 
-use Elidas1008\Experiments\Lib\Entity\Serializable;
+use Elidas1008\Experiments\Lib\Entity\Entity;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Throwable;
 
@@ -17,7 +17,7 @@ class ApiClient
     /**
      * @throws Throwable
      */
-    public function get(string $url, string $entity, array $options = []): Serializable
+    public function get(string $url, string $entity, array $options = []): Entity
     {
         $response = $this->client->request('GET', $url, $options);
         return $this->serializer->deserialize($response->getContent(), $entity);
