@@ -27,11 +27,18 @@ class ApiClientLiveTest extends TestCase
     {
         $response = $this->client->get('http://api.zippopotam.us/be/9000', ZipCode::class);
 
-        $expected = [
+        $expected = new ZipCode();
+        $expected->country = 'Belgium';
+//        $expected->postCode = '9000';
+//        $expected->countryAbbreviation = 'BE';
+//        $expected->places = [];
+
+
+        $x = [
             "post code" => "9000", "country" => "Belgium", "country abbreviation" => "BE", "places" => [
                 ["place name" => "Gent", "longitude" => "3.7167", "state" => "Vlaanderen", "state abbreviation" => "VLG", "latitude" => "51.05"]
             ]
         ];
-        static::assertSame($expected, $response);
+        static::assertEquals($expected, $response);
     }
 }

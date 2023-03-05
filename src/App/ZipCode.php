@@ -10,4 +10,6 @@ class ZipCode extends Serializable
 {
     public string $postCode;
     public string $country;
+    public string $countryAbbreviation;
+//    public array $places;
 }
