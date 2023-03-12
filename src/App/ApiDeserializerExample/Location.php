@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Elidas1008\Experiments\App;
+namespace Elidas1008\Experiments\App\ApiDeserializerExample;
 
 use Elidas1008\Experiments\Lib\ApiDeserializer\Entity\Entity;
 use Elidas1008\Experiments\Lib\ApiDeserializer\Entity\EntityTranslation;
