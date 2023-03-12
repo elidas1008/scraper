@@ -1,9 +1,9 @@
 <?php
 
-namespace Elidas1008\Experiments\Lib;
+namespace Elidas1008\Experiments\Lib\ApiDeserializer;
 
-use Elidas1008\Experiments\Lib\Entity\EntityTranslation;
-use Elidas1008\Experiments\Lib\Entity\Entity;
+use Elidas1008\Experiments\Lib\ApiDeserializer\Entity\Entity;
+use Elidas1008\Experiments\Lib\ApiDeserializer\Entity\EntityTranslation;
 use ReflectionClass;
 use RuntimeException;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Elidas1008\Experiments\Lib\Entity;
+namespace Elidas1008\Experiments\Lib\ApiDeserializer\Entity;
 
 use Attribute;
 

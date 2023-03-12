@@ -6,9 +6,9 @@ namespace Elidas1008\Experiments\Tests;
 
 use Elidas1008\Experiments\App\Location;
 use Elidas1008\Experiments\App\ZipCode;
-use Elidas1008\Experiments\Lib\ApiClient;
-use Elidas1008\Experiments\Lib\Entity\Entity;
-use Elidas1008\Experiments\Lib\JsonSerializer;
+use Elidas1008\Experiments\Lib\ApiDeserializer\ApiClient;
+use Elidas1008\Experiments\Lib\ApiDeserializer\Entity\Entity;
+use Elidas1008\Experiments\Lib\ApiDeserializer\JsonSerializer;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\CurlHttpClient;
 use Throwable;

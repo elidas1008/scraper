@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Elidas1008\Experiments\Lib;
+namespace Elidas1008\Experiments\Lib\ApiDeserializer;
 
-use Elidas1008\Experiments\Lib\Entity\Entity;
+use Elidas1008\Experiments\Lib\ApiDeserializer\Entity\Entity;
 use Throwable;
 
 class JsonSerializer extends AbstractSerializer

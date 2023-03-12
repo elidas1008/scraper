@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Elidas1008\Experiments\Lib;
+namespace Elidas1008\Experiments\Lib\ApiDeserializer;
 
 enum AbstractSerializerOptions
 {
